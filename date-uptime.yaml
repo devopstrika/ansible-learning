@@ -1,5 +1,5 @@
 ---
-- name: Verify Server uptime and current date playbook
+- name: Verify server uptime and current date playbook
   hosts: slave
   remote_user: root
       
