@@ -1,0 +1,19 @@
+---
+- name: Verify server uptime and current date playbook
+  hosts: slave
+  remote_user: root
+      
+  tasks:
+  - name: get uptime of the server
+    shell: uptime
+    register: output
+  - debug: msg="the server uptime is {{output.stdout}}"
+  - name: get current date on the server
+    shell: date
+    register: output
+  - debug: msg="The current date is {{output.stdout}}"
+  - name: list directory 
+    shell: ls -l /tmp
+    register: output
+  - debug: msg=" file and directories of slaves is {{output.stdout}}"
+
